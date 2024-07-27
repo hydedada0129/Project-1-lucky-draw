@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+SCOPES = ["https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.send"]
 
 def main():
     """Shows basic usage of the Gmail API.
@@ -25,7 +25,7 @@ def main():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("client_secret_drawing.json", SCOPES)
             creds = flow.run_local_server(port=8080)
             # Save the credentials for the next run
         with open("token.json", "w") as token:
@@ -48,3 +48,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
