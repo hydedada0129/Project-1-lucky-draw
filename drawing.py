@@ -48,8 +48,8 @@ def main():
     creds = authenticate_gmail_api()
     service = build('gmail', 'v1', credentials=creds)
 
-    sender = 'hydedada0129@gmail.com'
-    to = 'hydedada666@yahoo.com'
+    sender = ''
+    to = ''
     subject = 'testttttt'
     message_text = 'this is the body of the email.'
 
