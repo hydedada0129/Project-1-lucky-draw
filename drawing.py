@@ -102,11 +102,11 @@ def main():
     creds = authenticate_gmail_api()
     #create the service
     service = build('gmail', 'v1', credentials=creds)
-    sender = 'hydedada0129@gmail.com'
-    to = 'hydedada0129@gmail.com'
+    sender = 'your@gmail.com'
+    to = 'recipient@gmail.com'
     subject = 'Drawing CSV file update'
     message_text = "please find attached csv file..."
-    file_path = "/home/oem/PycharmProjects/drawing/extracted_data.csv"
+    file_path = "/your/path/to/extracted_csv_file"
     message = create_message_with_attachment(sender, to, subject, message_text, file_path)
     send_message(service, 'me', message)
 
